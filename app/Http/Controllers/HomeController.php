@@ -10,7 +10,7 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
-    //
+    //Sending admin and user in different pages
     public function redirect(){
         if(Auth::id()){
             if(Auth::user()->usertype=='0'){
@@ -21,5 +21,10 @@ class HomeController extends Controller
         }else{
             return redirect()->back();
         }
+    }
+
+    // Index function or initial pages or landing page
+    public function index(){
+        return view('user.home');
     }
 }
