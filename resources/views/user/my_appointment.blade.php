@@ -84,9 +84,6 @@
             </li>
             @if(Route::has('login'))
             @auth
-            <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="{{url('myappointment')}}">My Appointment</a>
-            </li>
             <x-app-layout>
             </x-app-layout>
             @else
@@ -104,26 +101,32 @@
     </nav>
   </header>
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
-    <div class="hero-section">
-      <div class="container text-center wow zoomIn">
-        <span class="subhead">Let's make your life happier</span>
-        <h1 class="display-4">Healthy Living</h1>
-        <a href="#" class="btn btn-primary">Let's Consult</a>
-      </div>
-    </div>
+  <div align="center" style="padding:70px;">
+    <table>
+        <tr style="background-color:black;">
+            <th style="padding:10px; font-size:20px; color:white;">Doctor</th>
+            <th style="padding:10px; font-size:20px; color:white;">Message</th>
+            <th style="padding:10px; font-size:20px; color:white;">Date</th>
+            <th style="padding:10px; font-size:20px; color:white;">Status</th>
+            <th style="padding:10px; font-size:20px; color:white;">Cancellation</th>
+        </tr>
+        @foreach($appoint as $appointment)
+        <tr style="background-color:black;" align="center">
+            <td style="padding:10px; font-size:20px; color:white;">{{$appointment->doctor}}</td>
+            <td style="padding:10px; font-size:20px; color:white;">{{$appointment->message}}</td>
+            <td style="padding:10px; font-size:20px; color:white;">{{$appointment->date}}</td>
+            <td style="padding:10px; font-size:20px; color:white;">{{$appointment->status}}</td>
+            <td>
+               <a class="btn btn-danger" onclick="return confirm('Are you sure enough to cancel appointment')"
+                  href="{{url('cancel_appointment',$appointment->id)}}">
+                  Cancel
+                </a>
+            </td>
+        </tr>
+        @endforeach
+    </table>
   </div>
 
-
-    @include('user.service')
-
-    @include('user.welcome')
-
-    @include('user.doctor')
-
-    @include('user.latest')
-
-    @include('user.appointment')
 
     @include('user.footer')
 

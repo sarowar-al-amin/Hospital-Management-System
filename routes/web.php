@@ -20,12 +20,29 @@ use App\Http\Controllers\AdminController;
 //     return view('welcome');
 // });
 
+// Home controller's route
+
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
 
+Route::post('/appointment', [HomeController::class, 'appointment']);
+
+Route::get('/myappointment', [HomeController::class, 'myappointment']);
+
+Route::get('/cancel_appointment/{id}', [HomeController::class, 'cancel_appointment']);
+
+
+// ###################################################################################
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+// ###################################################################################
 
+// Admin controller's route
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+
+Route::post('/upload_doctor', [AdminController::class, 'upload']);
+
+

@@ -8,6 +8,12 @@
     @include('admin.css')
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+    <style type="text/css">
+        label{
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -19,18 +25,19 @@
         <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
             <div class="container" align="center" style="padding-top:100px;">
-                <form>
+                <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div style="padding:15px;">
                         <label>Name</label>
-                        <input type="text" name="name" style="color:black;" placeholder="Write the doctor's name">
+                        <input type="text" name="name" style="color:black;" placeholder="Write the doctor's name" required="">
                     </div>
                     <div style="padding:15px;">
                         <label>Phone</label>
-                        <input type="number" name="number" style="color:black;" placeholder="Write the doctor's number">
+                        <input type="text" name="phone" style="color:black;" placeholder="Write the doctor's number" required="">
                     </div>
                     <div style="padding:15px;">
-                        <label>Speciality</labe>
-                        <select name="speciality" style="width:236px;">
+                        <label>Speciality</label>
+                        <select name="speciality" style="width:236px; color:black;">
                             <option>--select--<option>
                             <option value="skin">skin<option>
                             <option value="heart">heart<option>
@@ -40,7 +47,7 @@
                     </div>
                     <div style="padding:15px;">
                         <label>Room number</label>
-                        <input type="text" name="room" style="color:black;" placeholder="Write the doctor's room number">
+                        <input type="text" name="room" style="color:black;" placeholder="Write the doctor's room number" required="">
                     </div>
                     <div style="padding:15px;">
                         <label>Image</label>
