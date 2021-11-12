@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Doctor;
 
+use App\Models\Appointment;
+
 class AdminController extends Controller
 {
     //
@@ -27,6 +29,30 @@ class AdminController extends Controller
         $doctor->speciality = $request->speciality;
 
         $doctor->save();
+
+        return redirect()->back();
+    }
+
+    //
+    public function appointment_show(){
+        $data = appointment::all();
+        return view('admin.appointment_list',compact('data'));
+    }
+
+    //
+    public function approve_appoint($id){
+        $data = appointment::find($id);
+        $data->status = "Approved";
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    //
+    public function cancel_appoint($id){
+        $data = appointment::find($id);
+        $data->status = "Cancel";
+        $data->save();
 
         return redirect()->back();
     }
