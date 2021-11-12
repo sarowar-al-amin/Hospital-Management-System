@@ -72,5 +72,13 @@
         <span class="menu-title">Appointments</span>
     </a>
     </li>
+    <li class="nav-item menu-items">
+    <a class="nav-link" href="{{url('show_doctors')}}">
+        <span class="menu-icon">
+        <i class="mdi mdi-file-document-box"></i>
+        </span>
+        <span class="menu-title">Show all doctors</span>
+    </a>
+    </li>
 </ul>
 </nav>
