@@ -100,4 +100,8 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function add_multiple_doctor(){
+        return view('adminlte-admin.add_multiple_doctors');
+    }
 }
