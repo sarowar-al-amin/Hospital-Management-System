@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
+
+use App\Http\Controllers\DoctorImportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +62,6 @@ Route::get('/update_doctor/{id}', [AdminController::class, 'update_doctor']);
 Route::post('/edit_doctor/{id}', [AdminController::class, 'edit_doctor']);
 
 Route::get('/add_multiple_doctor', [AdminController::class, 'add_multiple_doctor']);
+
+// Doctor Import controller
+Route::post('/upload_multiple_doctor', [DoctorImportController::class, 'upload_multiple_doctor']);

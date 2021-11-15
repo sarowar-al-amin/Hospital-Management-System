@@ -27,7 +27,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-                <h2>Import Excel file</h2>
+            <div class="container" align="center" style="padding-top:100px;">
+                    <form action="{{url('upload_multiple_doctor')}}" method="POST" enctype="multipart/form-data">
+                        <!-- {{url('upload_multiple_doctor')}} -->
+                        @csrf
+                        <div style="padding:15px;">
+                            <label>Import Excel file</label>
+                            <input type="file" name="file">
+                        </div>
+                        <div style="padding:15px;">
+                            <input type="submit" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Control Sidebar -->
