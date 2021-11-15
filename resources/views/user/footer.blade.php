@@ -16,7 +16,6 @@
             <li><a href="#">Terms & Condition</a></li>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Advertise</a></li>
-            <li><a href="#">Join as Doctors</a></li>
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
@@ -29,8 +28,8 @@
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
           <h5>Contact</h5>
-          <p class="footer-link mt-2">351 Willow Street Franklin, MA 02038</p>
-          <a href="#" class="footer-link">701-573-7582</a>
+          <p class="footer-link mt-2">Cantonment area, New Billshimla, Rajshahi Uposhohor, Rajshahi</p>
+          <a href="#" class="footer-link">333</a>
           <a href="#" class="footer-link">healthcare@temporary.net</a>
 
           <h5 class="mt-3">Social Media</h5>
