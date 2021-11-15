@@ -21,7 +21,8 @@ class HomeController extends Controller
                 $doctor = doctor::all();
                 return view('user.home', compact('doctor'));
             }else{
-                return view('admin.home');
+                // return view('admin.home');
+                return view('adminlte-admin.home');
             }
         }else{
             return redirect()->back();

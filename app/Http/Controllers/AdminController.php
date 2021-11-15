@@ -12,7 +12,8 @@ class AdminController extends Controller
 {
     //
     public function addview(){
-        return view('admin.add_doctor');
+        // return view('admin.add_doctor');
+        return view('adminlte-admin.add_doctor');
     }
 
     public function upload(Request $request){
@@ -36,7 +37,8 @@ class AdminController extends Controller
     //
     public function appointment_show(){
         $data = appointment::all();
-        return view('admin.appointment_list',compact('data'));
+        // return view('admin.appointment_list',compact('data'));
+        return view('adminlte-admin.appointment_list',compact('data'));
     }
 
     //
@@ -60,7 +62,8 @@ class AdminController extends Controller
     //
     public function show_doctors(){
         $doctor_list = doctor::all();
-        return view('admin.show_doctors',compact('doctor_list'));
+        // return view('admin.show_doctors',compact('doctor_list'));
+        return view('adminlte-admin.show_doctors',compact('doctor_list'));
     }
 
     //
@@ -75,7 +78,8 @@ class AdminController extends Controller
     public function update_doctor($id){
         $data = doctor::find($id);
 
-        return view('admin.update_doctor',compact('data'));
+        // return view('admin.update_doctor',compact('data'));
+        return view('adminlte-admin.update_doctor',compact('data'));
     }
 
     //
